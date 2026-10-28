@@ -1,0 +1,240 @@
+:root {
+    --laranja-principal: #f57c00;
+    --laranja-escuro: #e65100;
+    --laranja-claro: #ffcc80;
+    --laranja-suave: #fff3e0;
+    --fundo: #fff8f1;
+    --branco: #ffffff;
+    --texto: #3e2723;
+    --texto-secundario: #795548;
+    --borda: #ffe0b2;
+    --sombra: 0 8px 24px rgba(230, 81, 0, 0.10);
+}
+ 
+ 
+* {
+    box-sizing: border-box;
+}
+ 
+body {
+    max-width: 760px;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 20px 24px;
+ 
+    font-family: "Segoe UI", Arial, sans-serif;
+    color: var(--texto);
+    background:
+        radial-gradient(
+            circle at top right,
+            #ffe0b2 0,
+            transparent 35%
+        ),
+        var(--fundo);
+ 
+    line-height: 1.2;
+}
+ 
+ 
+h2 {
+    margin: 0 0 30px;
+    color: var(--laranja-escuro);
+    font-size: 1.9rem;
+    font-weight: 750;
+    line-height: 1.3;
+    letter-spacing: -0.5px;
+}
+ 
+h2::after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 5px;
+    margin-top: 14px;
+    border-radius: 10px;
+    background: var(--laranja-principal);
+}
+ 
+ 
+input {
+    display: block;
+    width: 100%;
+    min-height: 50px;
+    margin-bottom: 16px;
+    padding: 12px 16px;
+ 
+    color: var(--texto);
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-radius: 4px;
+ 
+    font: inherit;
+    font-size: 1rem;
+ 
+    outline: none;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+ 
+input::placeholder {
+    color: #a1887f;
+}
+ 
+input:hover {
+    border-color: var(--laranja-claro);
+}
+ 
+input:focus {
+    border-color: var(--laranja-principal);
+    box-shadow: 0 0 0 4px rgba(245, 124, 0, 0.14);
+}
+ 
+ 
+body > button {
+    display: block;
+    width: 100%;
+    min-height: 52px;
+    margin: 8px 0 24px;
+    padding: 13px 20px;
+ 
+    color: var(--branco);
+    background: linear-gradient(
+        135deg,
+        var(--laranja-principal),
+        var(--laranja-escuro)
+    );
+ 
+    border: none;
+    border-radius: 4px;
+ 
+    font: inherit;
+    font-size: 1rem;
+    font-weight: 700;
+ 
+    cursor: pointer;
+    box-shadow: 0 5px 12px rgba(230, 81, 0, 0.20);
+ 
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        filter 0.2s ease;
+}
+ 
+body > button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(230, 81, 0, 0.28);
+    filter: brightness(1.04);
+}
+ 
+body > button:active {
+    transform: translateY(0);
+    box-shadow: 0 3px 8px rgba(230, 81, 0, 0.18);
+}
+ 
+button:focus-visible {
+    outline: 3px solid var(--laranja-claro);
+    outline-offset: 3px;
+}
+ 
+ 
+#listaTarefas {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
+}
+ 
+/* Cada tarefa é um div criado pelo JavaScript */
+ 
+#listaTarefas > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+ 
+    min-width: 0;
+    padding: 12px 12px;
+ 
+    color: var(--texto);
+    background: var(--branco);
+    border: 1px solid var(--borda);
+    border-left: 5px solid var(--laranja-principal);
+    border-radius: 4px;
+ 
+    box-shadow: var(--sombra);
+    overflow-wrap: anywhere;
+ 
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+ 
+#listaTarefas > div:hover {
+    transform: translateY(-2px);
+    border-left-color: var(--laranja-escuro);
+    box-shadow: 0 10px 28px rgba(230, 81, 0, 0.15);
+}
+ 
+ 
+#listaTarefas button {
+    flex-shrink: 0;
+    margin-left: 0 !important;
+    padding: 8px 13px;
+ 
+    color: var(--laranja-escuro);
+    background: var(--laranja-suave);
+    border: 1px solid var(--laranja-claro);
+    border-radius: 4px;
+ 
+    font: inherit;
+    font-size: 0.85rem;
+    font-weight: 700;
+ 
+    cursor: pointer;
+ 
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+ 
+#listaTarefas button:hover {
+    color: var(--branco);
+    background: var(--laranja-escuro);
+    border-color: var(--laranja-escuro);
+}
+ 
+ 
+@media (max-width: 600px) {
+    body {
+        padding: 32px 16px;
+    }
+ 
+    h2 {
+        font-size: 1.55rem;
+    }
+ 
+    #listaTarefas > div {
+        align-items: flex-start;
+        gap: 12px;
+        padding: 14px;
+    }
+ 
+    #listaTarefas button {
+        padding: 7px 10px;
+    }
+}
+ 
+ 
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
