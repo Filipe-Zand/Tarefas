@@ -1,0 +1,8 @@
+{
+    "terminal.integrated.env.windows": {
+        "PYTHONPATH": "${workspaceFolder}/tarefas"
+    },
+    "python.terminal.useEnvFile": true,
+    "editor.rulers": [80],
+    "python.analysis.typeCheckingMode": "off"
+}
