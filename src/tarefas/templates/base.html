@@ -3,17 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ titulo }}</title>
+    <title>{{ titulo_da_pagina }}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <h1>Digite a tarefa e a data de conclusão (opcional):</h1>
-    <input type="text" id="tituloTarefa">
-    <input type="date" id="dataConclusao">
-    <button type="button" onclick= "adicionarTarefa()" >Adicionar</button>
-    <output id="listaTarefas">Nenhuma tarefa cadastrada</output>
+    
+    <form method="POST">
+        <input type="text" name="tituloTarefa">
+        <input type="date" name="dataConclusao">
+        <button type="submit" onclick= "adicionarTarefa()" >Adicionar</button>
+    </form>
+    <!--<output id="listaTarefas">Nenhuma tarefa cadastrada</output>-->
 
-    <script>
+    <ul id="listaTarefas">
+        {% for tarefa in tarefas_da_pagina %}
+            <li>
+                {{ tarefa.titulo_tarefa }} - {{ tarefa.data_conclusao }}
+                <a href="#">Apagar</a> <!-- Link para a rota de apagar este ID -->
+            </li>
+        {% endfor %}
+    </ul>
+
+    <!-- <script>
         // Aplicação MVC (Modelagem-Visualização-Controle)
 
         let tarefas;
@@ -82,6 +94,6 @@
 
         renderizarTarefas();
 
-    </script>
+    </script> -->
 </body>
 </html>

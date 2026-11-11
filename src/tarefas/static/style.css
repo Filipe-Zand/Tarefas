@@ -148,7 +148,7 @@ button:focus-visible {
  
 /* Cada tarefa é um div criado pelo JavaScript */
  
-#listaTarefas > div {
+#listaTarefas > li {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -172,14 +172,14 @@ button:focus-visible {
         border-color 0.2s ease;
 }
  
-#listaTarefas > div:hover {
+#listaTarefas > li:houver {
     transform: translateY(-2px);
     border-left-color: var(--laranja-escuro);
     box-shadow: 0 10px 28px rgba(230, 81, 0, 0.15);
 }
  
  
-#listaTarefas button {
+#listaTarefas a {
     flex-shrink: 0;
     margin-left: 0 !important;
     padding: 8px 13px;
@@ -201,7 +201,7 @@ button:focus-visible {
         border-color 0.2s ease;
 }
  
-#listaTarefas button:hover {
+#listaTarefas a:hover {
     color: var(--branco);
     background: var(--laranja-escuro);
     border-color: var(--laranja-escuro);
@@ -217,13 +217,13 @@ button:focus-visible {
         font-size: 1.55rem;
     }
  
-    #listaTarefas > div {
+    #listaTarefas > li {
         align-items: flex-start;
         gap: 12px;
         padding: 14px;
     }
  
-    #listaTarefas button {
+    #listaTarefas a {
         padding: 7px 10px;
     }
 }

@@ -22,9 +22,9 @@ uv venv
 
 Ative o ambiente virtual:
 ```powershell
-.\.venv\Scripts\activate.ps1 # no Powershell do Windows
-source .venv/Scripts/activate # no Git Bash do Windows
-source .venv/bin/activate # no Bash do Linux 
+.\.venv\Scripts\Activate.ps1 # no Powershell do Windows
+source .venv/Scripts/Activate # no Git Bash do Windows
+source .venv/bin/Activate # no Bash do Linux 
 ```
 
 4. Instale o Flask

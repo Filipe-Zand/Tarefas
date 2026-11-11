@@ -17,7 +17,7 @@ class Tarefa:
     def salvarTarefa(self):
         """Salva a tarefa no banco de dados."""
 
-        sql = 'INSERT INTO tarefa (titulp_tarefa, data_conclusao) VALUES (%s, %s)'
+        sql = 'INSERT INTO tarefa (titulo_tarefa, data_conclusao) VALUES (%s, %s)'
         params = (self.titulo, self.data_conclusao) # Protege contra SQL Injection
 
         # Gerenciador de contexto (with)
@@ -26,6 +26,24 @@ class Tarefa:
             db.executar(sql, params)
 
 
+    @staticmethod
+    def listarTarefas():
+        """Retorna uma lista com todas as tarefas cadastradas."""
+
+        sql = '''
+        SELECT id_tarefa, titulo_tarefa, data_conclusao FROM tarefa LIMIT 100;
+        '''
+        with Database() as db:
+            tarefas_bancos = db.executar(sql)
+
+        return tarefas_bancos if tarefas_bancos else []
+
+
+    @staticmethod
+    def apagarMemoria():
+        pass
+
+
 # Área 51
-tarefa = Tarefa('Minha nova tarefa')
-tarefa.salvarTarefa()
+#tarefa = Tarefa('Minha nova tarefa')
+#tarefa.salvarTarefa()
