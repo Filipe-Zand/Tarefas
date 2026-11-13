@@ -40,8 +40,12 @@ class Tarefa:
 
 
     @staticmethod
-    def apagarMemoria():
-        pass
+    def apagarMemoria(id):
+        sql = 'DELETE FROM tarefa WHERE id_tarefa = %s'
+        params = (id,)
+
+        with Database() as db:
+            db.executar(sql, params)
 
 
 # Área 51

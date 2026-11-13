@@ -1,6 +1,6 @@
-from flask import Database, Flask, redirect, render_template, request, url_for
+from flask import Flask, redirect, render_template, request, url_for
 
-from tarefas.models.database import init_db
+from tarefas.models.database import Database, init_db
 from tarefas.models.tarefa import Tarefa
 
 app = Flask(__name__)
