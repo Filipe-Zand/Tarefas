@@ -79,11 +79,3 @@ class Tarefa:
             )
  
         return None
- 
- 
- 
- 
-# Área 51 (testes)
-#tarefa = Tarefa('Minha nova tarefa')
-#tarefa.salvarTarefa()
- 
